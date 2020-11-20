@@ -7,21 +7,21 @@
   <div v-html="hack"></div>
 
   <!-- Bidning Attributes -->
-  <h2 v-bind:id="headingId">Heading</h2>
-  <button v-bind:disabled="isDisabled">Bind</button>
+  <h2 :id="headingId">Heading</h2>
+  <button :disabled="isDisabled">Bind</button>
 
   <!-- Binding Classes -->
   <h2 class="underline">Underlined Text</h2>
-  <h2 v-bind:class="status">Status</h2>
-  <h2 class="underline" v-bind:class="status">Static Dynamic</h2>
-  <h2 v-bind:class="isPromoted && 'promoted'">Promoted Movie</h2>
-  <h2 v-bind:class="isSoldOut ? 'sold-out' : 'new'">Soldout? Movie</h2>
-  <h2 v-bind:class="['new', 'promoted']">Newly Promoted Movie</h2>
-  <h2 v-bind:class="[isPromoted && 'promoted', isSoldOut ? 'sold-out' : 'new']">
+  <h2 :class="status">Status</h2>
+  <h2 class="underline" :class="status">Static Dynamic</h2>
+  <h2 :class="isPromoted && 'promoted'">Promoted Movie</h2>
+  <h2 :class="isSoldOut ? 'sold-out' : 'new'">Soldout? Movie</h2>
+  <h2 :class="['new', 'promoted']">Newly Promoted Movie</h2>
+  <h2 :class="[isPromoted && 'promoted', isSoldOut ? 'sold-out' : 'new']">
     Array Conditional Movie
   </h2>
   <h2
-    v-bind:class="{
+    :class="{
       promoted: isPromoted,
       new: !isSoldOut,
       'sold-out': isSoldOut,
@@ -32,7 +32,7 @@
 
   <!-- Binding Inline Styles -->
   <h2
-    v-bind:style="{
+    :style="{
       color: highlightColor,
       fontSize: headerSize + 'px',
       padding: '20px',
@@ -40,9 +40,9 @@
   >
     Inline Style
   </h2>
-  <h2 v-bind:style="headerStyleObject">Style Object</h2>
-  <div v-bind:style="[baseStyleObject, successStyleObject]">Success Style</div>
-  <div v-bind:style="[baseStyleObject, dangerStyleObject]">Danger Style</div>
+  <h2 :style="headerStyleObject">Style Object</h2>
+  <div :style="[baseStyleObject, successStyleObject]">Success Style</div>
+  <div :style="[baseStyleObject, dangerStyleObject]">Danger Style</div>
 </template>
 
 <script>
