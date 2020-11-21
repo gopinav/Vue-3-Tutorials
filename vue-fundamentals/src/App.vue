@@ -54,6 +54,7 @@
     <h2>Codevolution 1</h2>
     <h2>Vue 3 2</h2>
   </template>
+  <h2 v-show="showElement">Using v-show</h2>
 </template>
 
 <script>
@@ -92,7 +93,7 @@ export default {
         border: '1px solid darkred',
       },
       num: 1,
-      showElement: true,
+      showElement: false,
     }
   },
 }
