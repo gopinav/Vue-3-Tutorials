@@ -43,6 +43,17 @@
   <h2 :style="headerStyleObject">Style Object</h2>
   <div :style="[baseStyleObject, successStyleObject]">Success Style</div>
   <div :style="[baseStyleObject, dangerStyleObject]">Danger Style</div>
+
+  <!-- Conditional Rendering -->
+  <h1 v-if="num === 0">The number is zero</h1>
+  <h2 v-else-if="num < 0">The number is negative</h2>
+  <h2 v-else-if="num > 0">The number is positive</h2>
+  <h2 v-else>Not a number</h2>
+  <template v-if="showElement">
+    <h2>Vishwas</h2>
+    <h2>Codevolution 1</h2>
+    <h2>Vue 3 2</h2>
+  </template>
 </template>
 
 <script>
@@ -80,6 +91,8 @@ export default {
         backgroundColor: 'red',
         border: '1px solid darkred',
       },
+      num: 1,
+      showElement: true,
     }
   },
 }
