@@ -51,8 +51,8 @@
   <h2 v-else>Not a number</h2>
   <template v-if="showElement">
     <h2>Vishwas</h2>
-    <h2>Codevolution 1</h2>
-    <h2>Vue 3 2</h2>
+    <h2>Codevolution</h2>
+    <h2>Vue 3</h2>
   </template>
   <h2 v-show="showElement">Using v-show</h2>
 </template>
