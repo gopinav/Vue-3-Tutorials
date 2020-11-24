@@ -55,6 +55,23 @@
     <h2>Vue 3</h2>
   </template>
   <h2 v-show="showElement">Using v-show</h2>
+
+  <!-- List Rendering -->
+  <h2 v-for="(name, index) in names" :key="name">{{ index }} {{ name }}</h2>
+  <h2 v-for="name in fullNames" :key="name.first">
+    {{ name.first }} {{ name.last }}
+  </h2>
+  <template v-for="name in names" :key="name">
+    <h2>{{ name }}</h2>
+    <hr />
+  </template>
+  <div v-for="actor in actors" :key="actor.name">
+    <h3>{{ actor.name }}</h3>
+    <div v-for="movie in actor.movies" :key="movie">{{ movie }}</div>
+  </div>
+  <h2 v-for="(value, key, index) in myInfo" :key="value">
+    {{ index }} {{ key }} {{ value }}
+  </h2>
 </template>
 
 <script>
@@ -94,6 +111,27 @@ export default {
       },
       num: 1,
       showElement: false,
+      names: ['Bruce', 'Clark', 'Diana'],
+      fullNames: [
+        { first: 'Bruce', last: 'Wayne' },
+        { first: 'Clark', last: 'Kent' },
+        { first: 'Princess', last: 'Diana' },
+      ],
+      myInfo: {
+        name: 'Vishwas',
+        channel: 'Codevolution',
+        course: 'Vue 3',
+      },
+      actors: [
+        {
+          name: 'Christian Bale',
+          movies: ['Batman', 'American Psycho'],
+        },
+        {
+          name: 'Di Caprio',
+          movies: ['Titanic', 'Inception'],
+        },
+      ],
     }
   },
 }
