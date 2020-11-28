@@ -61,17 +61,17 @@
   <h2 v-for="name in fullNames" :key="name.first">
     {{ name.first }} {{ name.last }}
   </h2>
-  <template v-for="name in names" :key="name">
-    <h2>{{ name }}</h2>
-    <hr />
-  </template>
   <div v-for="actor in actors" :key="actor.name">
-    <h3>{{ actor.name }}</h3>
-    <div v-for="movie in actor.movies" :key="movie">{{ movie }}</div>
+    <h2>{{ actor.name }}</h2>
+    <h3 v-for="movie in actor.movies" :key="movie">{{ movie }}</h3>
   </div>
   <h2 v-for="(value, key, index) in myInfo" :key="value">
     {{ index }} {{ key }} {{ value }}
   </h2>
+  <template v-for="name in names" :key="name">
+    <h2>{{ name }}</h2>
+    <hr />
+  </template>
 </template>
 
 <script>
@@ -117,11 +117,6 @@ export default {
         { first: 'Clark', last: 'Kent' },
         { first: 'Princess', last: 'Diana' },
       ],
-      myInfo: {
-        name: 'Vishwas',
-        channel: 'Codevolution',
-        course: 'Vue 3',
-      },
       actors: [
         {
           name: 'Christian Bale',
@@ -132,6 +127,11 @@ export default {
           movies: ['Titanic', 'Inception'],
         },
       ],
+      myInfo: {
+        name: 'Vishwas',
+        channel: 'Codevolution',
+        course: 'Vue 3',
+      },
     }
   },
 }
