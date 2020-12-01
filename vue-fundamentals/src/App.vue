@@ -75,6 +75,24 @@
   <template v-for="name in names" :key="name">
     <h2 v-if="name === 'Bruce'">{{ name }}</h2>
   </template>
+
+  <!-- Methods -->
+  <h2>{{ 2 + 3 + 5 }}</h2>
+  <h2>{{ 5 + 10 + 15 }}</h2>
+  <h2>Add method - {{ add(2, 3, 5) }}</h2>
+  <h2>Add method - {{ add(5, 10, 15) }}</h2>
+  <h2>Multiply method - {{ multiply(10) }}</h2>
+  <h2>Multiply method - {{ multiply(baseValue) }}</h2>
+
+  <!-- Event Handling -->
+  <h2>{{ name }}</h2>
+  <div>
+    <button @click="name = 'Batman'">Change name</button>
+  </div>
+  <h2>{{ count }}</h2>
+  <div>
+    <button @mouseover="count += 1">Increment</button>
+  </div>
 </template>
 
 <script>
@@ -135,7 +153,18 @@ export default {
         channel: 'Codevolution',
         course: 'Vue 3',
       },
+      baseMultiplier: 5,
+      baseValue: 2,
+      count: 0,
     }
+  },
+  methods: {
+    add(a, b, c) {
+      return a + b + c
+    },
+    multiply(num) {
+      return num * this.baseMultiplier
+    },
   },
 }
 </script>
