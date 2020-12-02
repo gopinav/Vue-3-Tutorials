@@ -91,7 +91,10 @@
   </div>
   <h2>{{ count }}</h2>
   <div>
-    <button @mouseover="count += 1">Increment</button>
+    <button @click="increment(1)">Increment</button>
+    <button @click="decrement(1)">Decrement</button>
+    <button @click="increment(5)">Increment 5</button>
+    <button @click="decrement(5)">Decrement 5</button>
   </div>
 </template>
 
@@ -164,6 +167,12 @@ export default {
     },
     multiply(num) {
       return num * this.baseMultiplier
+    },
+    increment(num) {
+      this.count += num
+    },
+    decrement(num) {
+      this.count -= num
     },
   },
 }
