@@ -87,15 +87,88 @@
   <!-- Event Handling -->
   <h2>{{ name }}</h2>
   <div>
-    <button @click="name = 'Batman'">Change name</button>
+    <button @click="changeName($event), increment(1, $event)">
+      Change name
+    </button>
   </div>
   <h2>{{ count }}</h2>
   <div>
-    <button @click="increment(1)">Increment</button>
+    <button @click="increment(1, $event)">Increment</button>
     <button @click="decrement(1)">Decrement</button>
     <button @click="increment(5)">Increment 5</button>
     <button @click="decrement(5)">Decrement 5</button>
   </div>
+
+  <!-- Form Handling -->
+  <form @submit="submitForm">
+    <div>
+      <label>Name</label>
+      <input type="text" v-model="formValues.name" />
+    </div>
+    <div>
+      <label>Profile Summary</label>
+      <textarea v-model="formValues.profileSummary" />
+    </div>
+    <div>
+      <label>Country</label>
+      <select v-model="formValues.country">
+        <option value="">Select a country</option>
+        <option value="india">India</option>
+        <option value="vietnam">Vietnam</option>
+        <option value="singapore">Singapore</option>
+      </select>
+    </div>
+    <div>
+      <label>Job location</label>
+      <select v-model="formValues.jobLocation" multiple>
+        <option value="india">India</option>
+        <option value="vietnam">Vietnam</option>
+        <option value="singapore">Singapore</option>
+      </select>
+    </div>
+    <div>
+      <input type="checkbox" v-model="formValues.remoteWork" />
+      <label>Open to remote work?</label>
+    </div>
+    <div>
+      <label>Skill set</label>
+      <input
+        type="checkbox"
+        id="html"
+        value="html"
+        v-model="formValues.skillSet"
+      />
+      <label>HTML</label>
+      <input
+        type="checkbox"
+        id="css"
+        value="css"
+        v-model="formValues.skillSet"
+      />
+      <label>CSS</label>
+      <input
+        type="checkbox"
+        id="javascript"
+        value="javascript"
+        v-model="formValues.skillSet"
+      />
+      <label>JavaScript</label>
+    </div>
+    <div>
+      <label>Years of Experience</label>
+      <input type="radio" value="0-2" v-model="formValues.yearsOfExperience" />
+      <label>0-2</label>
+      <input type="radio" value="3-5" v-model="formValues.yearsOfExperience" />
+      <label>3-5</label>
+      <input type="radio" value="6-10" v-model="formValues.yearsOfExperience" />
+      <label>5-10</label>
+      <input type="radio" value="10+" v-model="formValues.yearsOfExperience" />
+      <label>10+</label>
+    </div>
+    <div>
+      <button>Submit</button>
+    </div>
+  </form>
 </template>
 
 <script>
@@ -159,6 +232,15 @@ export default {
       baseMultiplier: 5,
       baseValue: 2,
       count: 0,
+      formValues: {
+        name: '',
+        profileSummary: '',
+        country: '',
+        jobLocation: [],
+        remoteWork: false,
+        skillSet: [],
+        yearsOfExperience: '',
+      },
     }
   },
   methods: {
@@ -168,11 +250,20 @@ export default {
     multiply(num) {
       return num * this.baseMultiplier
     },
-    increment(num) {
+    increment(num, event) {
       this.count += num
+      console.log(event)
     },
     decrement(num) {
       this.count -= num
+    },
+    changeName(event) {
+      this.name = 'Batman'
+      console.log('Event', event)
+    },
+    submitForm(event) {
+      event.preventDefault()
+      console.log('form values', this.formValues)
     },
   },
 }
@@ -183,7 +274,7 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
   margin-top: 60px;
 }
@@ -198,5 +289,31 @@ export default {
 }
 .sold-out {
   color: red;
+}
+label {
+  font-weight: bold;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+input + label {
+  font-weight: bold;
+  display: inline-flex;
+  margin-right: 20px;
+}
+
+input[type='text'],
+textarea,
+select {
+  display: block;
+  width: 400px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 </style>
