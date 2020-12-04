@@ -100,18 +100,23 @@
   </div>
 
   <!-- Form Handling -->
+  <div>
+    <pre>
+      {{ JSON.stringify(formValues, null, 2) }}
+    </pre>
+  </div>
   <form @submit="submitForm">
     <div>
-      <label>Name</label>
-      <input type="text" v-model="formValues.name" />
+      <label for="name">Name</label>
+      <input type="text" id="name" v-model="formValues.name" />
     </div>
     <div>
-      <label>Profile Summary</label>
-      <textarea v-model="formValues.profileSummary" />
+      <label for="profile">Profile Summary</label>
+      <textarea id="profile" v-model="formValues.profileSummary" />
     </div>
     <div>
-      <label>Country</label>
-      <select v-model="formValues.country">
+      <label for="country">Country</label>
+      <select id="country" v-model="formValues.country">
         <option value="">Select a country</option>
         <option value="india">India</option>
         <option value="vietnam">Vietnam</option>
@@ -119,8 +124,8 @@
       </select>
     </div>
     <div>
-      <label>Job location</label>
-      <select v-model="formValues.jobLocation" multiple>
+      <label for="job-location">Job location</label>
+      <select id="job-location" v-model="formValues.jobLocation" multiple>
         <option value="india">India</option>
         <option value="vietnam">Vietnam</option>
         <option value="singapore">Singapore</option>
@@ -132,26 +137,11 @@
     </div>
     <div>
       <label>Skill set</label>
-      <input
-        type="checkbox"
-        id="html"
-        value="html"
-        v-model="formValues.skillSet"
-      />
+      <input type="checkbox" value="html" v-model="formValues.skillSet" />
       <label>HTML</label>
-      <input
-        type="checkbox"
-        id="css"
-        value="css"
-        v-model="formValues.skillSet"
-      />
+      <input type="checkbox" value="css" v-model="formValues.skillSet" />
       <label>CSS</label>
-      <input
-        type="checkbox"
-        id="javascript"
-        value="javascript"
-        v-model="formValues.skillSet"
-      />
+      <input type="checkbox" value="javascript" v-model="formValues.skillSet" />
       <label>JavaScript</label>
     </div>
     <div>
