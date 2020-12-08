@@ -198,17 +198,16 @@
     </div>
     <div>
       <label for="age">Age</label>
-      <input
-        type="number"
-        id="age"
-        v-model.number="formValues.age"
-        @keyup.enter="submitForm"
-      />
+      <input type="number" id="age" v-model.number="formValues.age" />
     </div>
-    <!-- <div>
+    <div>
       <button>Submit</button>
-    </div> -->
+    </div>
   </form>
+
+  <!-- Bonus Directives -->
+  <h2 v-once>{{ name }}</h2>
+  <button @click="name = 'Batman'">Change name</button>
 </template>
 
 <script>
