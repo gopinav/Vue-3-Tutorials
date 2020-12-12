@@ -227,7 +227,7 @@
   <template v-for="item in items" :key="item.id">
     <h2 v-if="item.id === 1">{{ item.title }} - {{ item.price }}</h2>
   </template>
-  <h2 v-for="item in filteredItems" :key="item.id">
+  <h2 v-for="item in expensiveItems" :key="item.id">
     {{ item.title }} - {{ item.price }}
   </h2>
 </template>
@@ -359,8 +359,8 @@ export default {
       console.log('total computed property')
       return this.items.reduce((total, curr) => (total = total + curr.price), 0)
     },
-    filteredItems() {
-      return this.items.filter((item) => item.id === 1)
+    expensiveItems() {
+      return this.items.filter((item) => item.price > 100)
     },
   },
 }
