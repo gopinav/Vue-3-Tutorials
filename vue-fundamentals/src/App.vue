@@ -230,6 +230,7 @@
   <h2 v-for="item in expensiveItems" :key="item.id">
     {{ item.title }} - {{ item.price }}
   </h2>
+  <button @click="changeFullName">Change fullname</button>
 </template>
 
 <script>
@@ -350,10 +351,20 @@ export default {
       console.log('getTotal method')
       return this.items.reduce((total, curr) => (total = total + curr.price), 0)
     },
+    changeFullName() {
+      this.fullName = 'Clark Kent'
+    },
   },
   computed: {
-    fullName() {
-      return `${this.firstName} ${this.lastName}`
+    fullName: {
+      get() {
+        return `${this.firstName} ${this.lastName}`
+      },
+      set(value) {
+        const names = value.split(' ')
+        this.firstName = names[0]
+        this.lastName = names[1]
+      },
     },
     total() {
       console.log('total computed property')
