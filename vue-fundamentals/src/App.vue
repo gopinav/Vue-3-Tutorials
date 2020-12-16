@@ -231,6 +231,14 @@
     {{ item.title }} - {{ item.price }}
   </h2>
   <button @click="changeFullName">Change fullname</button>
+
+  <!-- Watchers -->
+  <h2>Volume Tracker (0-20)</h2>
+  <h3>Current Volume - {{ volume }}</h3>
+  <div>
+    <button @click="volume += 2">Increase</button>
+    <button @click="volume -= 2">Decrease</button>
+  </div>
 </template>
 
 <script>
@@ -324,6 +332,7 @@ export default {
         },
       ],
       country: '',
+      volume: 16,
     }
   },
   methods: {
@@ -372,6 +381,18 @@ export default {
     },
     expensiveItems() {
       return this.items.filter((item) => item.price > 100)
+    },
+  },
+  watch: {
+    volume: {
+      handler(newValue, oldValue) {
+        if (newValue > oldValue && newValue === 16) {
+          alert(
+            'Listening to a high volumne for a long time may damage your hearing'
+          )
+        }
+      },
+      immediate: true,
     },
   },
 }
