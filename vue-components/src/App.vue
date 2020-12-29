@@ -1,5 +1,7 @@
 <template>
-  <Greet />
+  <Greet name="Bruce" hero-name="Batman" />
+  <Greet name="Clark" hero-name="Superman" />
+  <Greet name="Diana" hero-name="Wonder Woman" />
 </template>
 
 <script>
