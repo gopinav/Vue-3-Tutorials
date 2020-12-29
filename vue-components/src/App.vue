@@ -1,4 +1,5 @@
 <template>
+  <Greet :name="name" :hero-name="channel" />
   <Greet name="Bruce" hero-name="Batman" />
   <Greet name="Clark" hero-name="Superman" />
   <Greet name="Diana" hero-name="Wonder Woman" />
@@ -11,6 +12,12 @@ export default {
   name: 'App',
   components: {
     Greet,
+  },
+  data() {
+    return {
+      name: 'Vishwas',
+      channel: 'Codevolution',
+    }
   },
 }
 </script>
