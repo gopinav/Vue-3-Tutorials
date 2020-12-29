@@ -3,15 +3,19 @@
   <Greet name="Bruce" hero-name="Batman" />
   <Greet name="Clark" hero-name="Superman" />
   <Greet name="Diana" hero-name="Wonder Woman" />
+
+  <Article title="Article Title" :likes="50" isPublished="true" />
 </template>
 
 <script>
+import Article from './components/Article.vue'
 import Greet from './components/Greet.vue'
 
 export default {
   name: 'App',
   components: {
     Greet,
+    Article,
   },
   data() {
     return {
