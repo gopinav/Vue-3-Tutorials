@@ -10,9 +10,16 @@
 export default {
   name: 'Article',
   props: {
-    title: String,
+    title: {
+      type: String,
+      required: true,
+      default: 'Article default title',
+    },
     likes: Number,
-    isPublished: Boolean,
+    isPublished: {
+      type: Boolean,
+      required: true,
+    },
   },
 }
 </script>
