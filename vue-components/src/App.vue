@@ -4,7 +4,7 @@
   <Greet name="Clark" hero-name="Superman" />
   <Greet name="Diana" hero-name="Wonder Woman" />
 
-  <Article :likes="50" :isPublished="true" />
+  <Article id="my-article" :likes="50" :isPublished="true" />
 </template>
 
 <script>
