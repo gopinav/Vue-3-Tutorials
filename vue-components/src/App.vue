@@ -5,22 +5,31 @@
   <Greet name="Diana" hero-name="Wonder Woman" />
 
   <Article id="my-article" :likes="50" :isPublished="true" />
+  <h3>App component {{ name }}</h3>
+  <ComponentC />
 </template>
 
 <script>
 import Article from './components/Article.vue'
 import Greet from './components/Greet.vue'
+import ComponentC from './components/ComponentC.vue'
 
 export default {
   name: 'App',
   components: {
     Greet,
     Article,
+    ComponentC,
   },
   data() {
     return {
       name: 'Vishwas',
       channel: 'Codevolution',
+    }
+  },
+  provide() {
+    return {
+      userName: this.name,
     }
   },
 }
