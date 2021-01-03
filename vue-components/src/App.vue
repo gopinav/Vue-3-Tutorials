@@ -13,7 +13,8 @@
 
   <!-- Events -->
   <button @click="showPopup = true">Show Popup</button>
-  <Popup v-show="showPopup" @close="showPopup = false" />
+  <Popup v-show="showPopup" @close="closePopup" />
+  <Input v-model="username" />
 </template>
 
 <script>
@@ -21,6 +22,7 @@ import Article from './components/Article.vue'
 import Greet from './components/Greet.vue'
 import ComponentC from './components/ComponentC.vue'
 import Popup from './components/Popup.vue'
+import Input from './components/Input.vue'
 
 export default {
   name: 'App',
@@ -29,13 +31,21 @@ export default {
     Article,
     ComponentC,
     Popup,
+    Input,
   },
   data() {
     return {
       name: 'Vishwas',
       channel: 'Codevolution',
       showPopup: false,
+      username: '',
     }
+  },
+  methods: {
+    closePopup(name) {
+      this.showPopup = false
+      console.log('name', name)
+    },
   },
   provide() {
     return {
