@@ -15,6 +15,11 @@
   <button @click="showPopup = true">Show Popup</button>
   <Popup v-show="showPopup" @close="closePopup" />
   <Input v-model="username" />
+
+  <!-- Slots -->
+  <Card></Card>
+  <Card>Card Content</Card>
+  <Card><img src="https://picsum.photos/200" /></Card>
 </template>
 
 <script>
@@ -23,6 +28,7 @@ import Greet from './components/Greet.vue'
 import ComponentC from './components/ComponentC.vue'
 import Popup from './components/Popup.vue'
 import Input from './components/Input.vue'
+import Card from './components/Card.vue'
 
 export default {
   name: 'App',
@@ -32,6 +38,7 @@ export default {
     ComponentC,
     Popup,
     Input,
+    Card,
   },
   data() {
     return {
