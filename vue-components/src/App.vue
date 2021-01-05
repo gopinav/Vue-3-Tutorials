@@ -20,6 +20,17 @@
   <Card></Card>
   <Card>Card Content</Card>
   <Card><img src="https://picsum.photos/200" /></Card>
+  <Card>
+    <template v-slot:header>
+      <h3>Header</h3>
+    </template>
+    <template v-slot:default>
+      <img src="https://picsum.photos/200" />
+    </template>
+    <template v-slot:footer>
+      <button>View Details</button>
+    </template>
+  </Card>
 </template>
 
 <script>
