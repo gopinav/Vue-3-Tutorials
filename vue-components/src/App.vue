@@ -31,6 +31,18 @@
       <button>View Details</button>
     </template>
   </Card>
+
+  <NameList>
+    <template v-slot:default="slotProps">
+      {{ slotProps.firstName }} {{ slotProps.lastName }}
+    </template>
+  </NameList>
+
+  <NameList>
+    <template v-slot:default="slotProps">
+      {{ slotProps.lastName }}, {{ slotProps.firstName }}
+    </template>
+  </NameList>
 </template>
 
 <script>
@@ -40,6 +52,7 @@ import ComponentC from './components/ComponentC.vue'
 import Popup from './components/Popup.vue'
 import Input from './components/Input.vue'
 import Card from './components/Card.vue'
+import NameList from './components/NameList.vue'
 
 export default {
   name: 'App',
@@ -50,6 +63,7 @@ export default {
     Popup,
     Input,
     Card,
+    NameList,
   },
   data() {
     return {
@@ -57,6 +71,7 @@ export default {
       channel: 'Codevolution',
       showPopup: false,
       username: '',
+      friends: ['Chandler', 'Joey', 'Monica'],
     }
   },
   methods: {
