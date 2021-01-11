@@ -4,15 +4,15 @@
 </template>
 
 <script>
-import CreatePost from "./components/CreatePost";
-import PostList from "./components/PostList";
+import CreatePost from './components/CreatePost'
+import PostList from './components/PostList'
 export default {
-  name: "App",
+  name: 'App',
   components: {
     PostList,
     CreatePost,
   },
-};
+}
 </script>
 
 <style>

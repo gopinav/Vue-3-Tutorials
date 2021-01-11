@@ -19,31 +19,31 @@
 </template>
 
 <script>
-import axios from "axios";
+import axios from 'axios'
 export default {
-  name: "CreatePost",
+  name: 'CreatePost',
   data() {
     return {
       formData: {
-        userId: "",
-        title: "",
-        body: "",
+        userId: '',
+        title: '',
+        body: '',
       },
-    };
+    }
   },
   methods: {
     createPost() {
       axios
-        .post("https://jsonplaceholder.typicode.com/posts", this.formData)
+        .post('https://jsonplaceholder.typicode.com/posts', this.formData)
         .then((response) => {
-          console.log(response);
+          console.log(response)
         })
         .catch((error) => {
-          console.log(error);
-        });
+          console.log(error)
+        })
     },
   },
-};
+}
 </script>
 
 <style scoped>

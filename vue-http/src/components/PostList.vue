@@ -11,31 +11,31 @@
 </template>
 
 <script>
-import axios from "axios";
+import axios from 'axios'
 
 export default {
-  name: "PostList",
+  name: 'PostList',
   data() {
     return {
       posts: [],
-      errorMsg: "",
-    };
+      errorMsg: '',
+    }
   },
   methods: {
     getPosts() {
       axios
-        .get("https://jsonplaceholder.typicode.com/posts")
+        .get('https://jsonplaceholder.typicode.com/posts')
         .then((response) => {
-          console.log(response);
-          this.posts = response.data;
+          console.log(response)
+          this.posts = response.data
         })
         .catch((error) => {
-          console.log(error);
-          this.errorMsg = "Error retrieving data";
-        });
+          console.log(error)
+          this.errorMsg = 'Error retrieving data'
+        })
     },
   },
-};
+}
 </script>
 
 <style scoped>
