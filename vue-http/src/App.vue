@@ -1,13 +1,16 @@
 <template>
+  <CreatePost />
   <PostList />
 </template>
 
 <script>
+import CreatePost from "./components/CreatePost";
 import PostList from "./components/PostList";
 export default {
   name: "App",
   components: {
     PostList,
+    CreatePost,
   },
 };
 </script>
