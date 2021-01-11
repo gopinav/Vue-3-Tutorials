@@ -1,11 +1,14 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
+  <PostList />
 </template>
 
 <script>
+import PostList from "./components/PostList";
 export default {
   name: "App",
-  components: {},
+  components: {
+    PostList,
+  },
 };
 </script>
 
