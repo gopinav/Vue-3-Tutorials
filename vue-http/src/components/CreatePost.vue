@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form @submit.prevent="createPost()">
+    <form @submit.prevent="createPost">
       <div>
         <label for="userId">Post User ID</label>
         <input type="text" id="userId" v-model="formData.userId" />
