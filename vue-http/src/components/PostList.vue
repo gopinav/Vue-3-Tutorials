@@ -2,7 +2,9 @@
   <div>
     <button @click="getPosts">Load Posts</button>
     <div v-for="post in posts" :key="post.id">
-      {{ post.id }} {{ post.title }}
+      <h3>{{ post.id }}. {{ post.title }}</h3>
+      <p>{{ post.body }}</p>
+      <hr />
     </div>
     <h3 v-if="errorMsg">{{ errorMsg }}</h3>
   </div>
