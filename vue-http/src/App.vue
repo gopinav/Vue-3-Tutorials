@@ -1,16 +1,21 @@
 <template>
   <CreatePost />
   <PostList />
+
+  <!-- Lifecycle Hooks -->
+  <Parent />
 </template>
 
 <script>
 import CreatePost from './components/CreatePost'
+import Parent from './components/Parent.vue'
 import PostList from './components/PostList'
 export default {
   name: 'App',
   components: {
     PostList,
     CreatePost,
+    Parent,
   },
 }
 </script>
