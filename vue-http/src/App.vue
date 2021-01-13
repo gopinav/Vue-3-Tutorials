@@ -4,18 +4,23 @@
 
   <!-- Lifecycle Hooks -->
   <Parent />
+
+  <!-- Template Refs -->
+  <TemplateRef />
 </template>
 
 <script>
 import CreatePost from './components/CreatePost'
-import Parent from './components/Parent.vue'
 import PostList from './components/PostList'
+import Parent from './components/Parent.vue'
+import TemplateRef from './components/TemplateRef.vue'
 export default {
   name: 'App',
   components: {
     PostList,
     CreatePost,
     Parent,
+    TemplateRef,
   },
 }
 </script>
