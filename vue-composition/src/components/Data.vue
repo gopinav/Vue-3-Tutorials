@@ -1,6 +1,7 @@
 <template>
-  <h2>Options - {{ o_name }}</h2>
-  <h2>Composition - {{ c_name }}</h2>
+  <h2>Options - {{ o_firstName }}</h2>
+  <h2>Composition - {{ c_firstName }}</h2>
+  <h2>Composition - {{ greet }}</h2>
 </template>
 
 <script>
@@ -8,17 +9,20 @@ import { ref } from 'vue'
 export default {
   name: 'Data',
   setup() {
-    const c_name = ref('Codevolution')
-    setTimeout(() => {
-      c_name.value = 'Updated Codevolution'
-    }, 2000)
+    const c_firstName = ref('Clark')
+    console.log('c_firstName', c_firstName)
+
+    c_firstName.value = 'Diana'
+    const greet = `Hello ${c_firstName.value}`
+
     return {
-      c_name,
+      c_firstName,
+      greet,
     }
   },
   data() {
     return {
-      o_name: 'Vishwas',
+      o_firstName: 'Bruce',
     }
   },
 }
