@@ -7,6 +7,8 @@
   <Computed />
   <Watch />
   <ProvideInject />
+  <LifecycleO />
+  <LifecycleC />
 </template>
 
 <script>
@@ -18,6 +20,8 @@ import VModel from './components/VModel.vue'
 import Computed from './components/Computed.vue'
 import Watch from './components/Watch.vue'
 import ProvideInject from './components/ProvideInject.vue'
+import LifecycleO from './components/LifecycleO.vue'
+import LifecycleC from './components/LifecycleC.vue'
 
 export default {
   name: 'App',
@@ -30,6 +34,8 @@ export default {
     Computed,
     Watch,
     ProvideInject,
+    LifecycleO,
+    LifecycleC,
   },
 }
 </script>
