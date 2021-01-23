@@ -5,6 +5,8 @@
   <Methods />
   <VModel />
   <Computed />
+  <Watch />
+  <ProvideInject />
 </template>
 
 <script>
@@ -14,6 +16,8 @@ import DemoTwo from './components/DemoTwo.vue'
 import Methods from './components/Methods.vue'
 import VModel from './components/VModel.vue'
 import Computed from './components/Computed.vue'
+import Watch from './components/Watch.vue'
+import ProvideInject from './components/ProvideInject.vue'
 
 export default {
   name: 'App',
@@ -24,6 +28,8 @@ export default {
     Methods,
     VModel,
     Computed,
+    Watch,
+    ProvideInject,
   },
 }
 </script>
