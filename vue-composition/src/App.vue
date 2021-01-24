@@ -9,6 +9,8 @@
   <ProvideInject />
   <LifecycleO />
   <LifecycleC />
+  <TemplateRef />
+  <Person />
 </template>
 
 <script>
@@ -22,6 +24,8 @@ import Watch from './components/Watch.vue'
 import ProvideInject from './components/ProvideInject.vue'
 import LifecycleO from './components/LifecycleO.vue'
 import LifecycleC from './components/LifecycleC.vue'
+import TemplateRef from './components/TemplateRef.vue'
+import Person from './components/Person.vue'
 
 export default {
   name: 'App',
@@ -36,6 +40,8 @@ export default {
     ProvideInject,
     LifecycleO,
     LifecycleC,
+    TemplateRef,
+    Person,
   },
 }
 </script>
