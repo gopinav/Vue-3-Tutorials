@@ -11,6 +11,8 @@
   <LifecycleC />
   <TemplateRef />
   <Person />
+  <ClickCounter />
+  <HoverCounter />
 </template>
 
 <script>
@@ -26,6 +28,8 @@ import LifecycleO from './components/LifecycleO.vue'
 import LifecycleC from './components/LifecycleC.vue'
 import TemplateRef from './components/TemplateRef.vue'
 import Person from './components/Person.vue'
+import ClickCounter from './components/ClickCounter.vue'
+import HoverCounter from './components/HoverCounter.vue'
 
 export default {
   name: 'App',
@@ -42,6 +46,8 @@ export default {
     LifecycleC,
     TemplateRef,
     Person,
+    ClickCounter,
+    HoverCounter,
   },
 }
 </script>
